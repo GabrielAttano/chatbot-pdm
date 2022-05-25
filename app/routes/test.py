@@ -1,8 +1,8 @@
 from google.cloud import dialogflow
 import os
 
-credential_path = 'C:\\Users\\t6w31\\Desktop\\dialogflow\\testagent-wfsa-62699a01dcc3.json'
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
+# credential_path = 'C:\\Users\\t6w31\\Desktop\\dialogflow\\testagent-wfsa-62699a01dcc3.json'
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
 async def detect_intent(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()
