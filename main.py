@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from test import detect_intent
+import app.routes.test as test
 
 app = FastAPI()
 
@@ -15,5 +15,5 @@ class Answer(BaseModel):
 @app.post("/send-message")
 async def send_message(message: Message):
     answer = Answer
-    answer.response = await detect_intent("testagent-wfsa", "123456", "olá", "pt-br")
+    answer.response = await test.detect_intent("testagent-wfsa", "123456", message.text, "pt-br")
     return answer.response
